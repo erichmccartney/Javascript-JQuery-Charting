@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Weekly Sleep</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js"></script>
+</head>
+<body>
+    <h1>Weekly Sleep (Required v. Actual)</h1>
+
+    <canvas id="weeklysleepradar" width="150" height="150"></canvas>
+
+    <script>
+        new Chart(document.getElementById("weeklysleepradar"), {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday',
+                    'Sunday'
+                ],
+                datasets: [{
+                    label: 'Sleep Required',
+                    data: [9.33, 8.25, 8.5, 8.88, 8.67, 8, 9.25],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+                }, {
+                    label: 'Hours of Sleep',
+                    data: [11.5, 5, 7, 7, 7.33, 7, 9.17],
+                    fill: true,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    pointBackgroundColor: 'rgb(54, 162, 235)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(54, 162, 235)'
+                }]
+            },
+            /*options = {
+                scales: {
+                    r: {
+                        suggestedMin: 0
+                    }
+                }
+            },*/
+        });
+    </script>
+</body>
+</html>
